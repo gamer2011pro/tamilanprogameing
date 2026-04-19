@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Tamilan Pro Gameing</title>
+<title>Tamilan Pro Gaming | NFS & GTA Mods</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description" content="Download NFS MW, GTA San Andreas mods. Tamilan Pro Gaming mods hub.">
@@ -16,28 +16,31 @@ body {
     background: linear-gradient(135deg, #0f0f0f, #1a0033);
     color: white;
     text-align: center;
-    overflow-x: hidden;
 }
 
-/* Neon animated background glow */
-body::before {
-    content: "";
-    position: fixed;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, #ff00ff33, transparent 70%);
-    animation: animateBg 10s linear infinite;
-    z-index: -1;
+/* Navbar */
+nav {
+    background: black;
+    padding: 10px;
+}
+nav a {
+    color: cyan;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@keyframes animateBg {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+/* Logo */
+.logo {
+    width: 150px;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 15px cyan);
 }
 
+/* Header */
 header {
-    font-size: 40px;
-    padding: 20px;
+    font-size: 35px;
+    padding: 10px;
     color: #00ffff;
     text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
 }
@@ -51,18 +54,27 @@ header {
 .game-card {
     background: rgba(0,0,0,0.7);
     margin: 20px;
-    padding: 20px;
-    width: 250px;
+    padding: 15px;
+    width: 260px;
     border-radius: 15px;
     box-shadow: 0 0 15px #ff00ff;
     transition: 0.3s;
 }
 
 .game-card:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 25px cyan;
 }
 
+/* Images */
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Button */
 button {
     padding: 10px 20px;
     background: linear-gradient(45deg, #ff00ff, #00ffff);
@@ -90,10 +102,6 @@ input, textarea {
     border: none;
 }
 
-#comments {
-    margin-top: 20px;
-}
-
 .comment {
     background: rgba(255,255,255,0.1);
     padding: 10px;
@@ -108,47 +116,67 @@ input, textarea {
 
 <body>
 
+<!-- Navbar -->
+<nav>
+<a href="#">Home</a>
+<a href="#">Games</a>
+<a href="#">Contact</a>
+</nav>
+
+<!-- Logo -->
+<img src="logo.png" class="logo">
+
 <header>
-🔥 Tamilan Pro Gameing 🎮
+🔥 Tamilan Pro Gaming 🎮
 </header>
 
 <h2>Neon Anime Gaming Mods Hub</h2>
 
 <div class="game-container">
 
+<!-- NFS MW 2005 -->
 <div class="game-card">
+<img src="nfsmw.jpg">
 <h3>NFS MW 2005</h3>
-<p>Need for Speed: Most Wanted is a classic open-world street racing game released in 2005 by EA Black Box and published by Electronic Arts, where you play as a racer aiming to climb the Blacklist by defeating 15 rivals after losing your iconic BMW M3 GTR to Clarence 'Razor' Callahan; set in the city of Rockport, the game combines high-speed races, intense police chases with increasing heat levels, and a variety of race modes like circuit, sprint, and drag, while also offering car customization and upgrades, making it widely loved for its thrilling gameplay, memorable soundtrack featuring artists like Avenged Sevenfold, and smooth performance even on modest PCs..</p>
+<p>Classic blacklist racing with intense police chases.</p>
 <a href="https://mega.nz/file/tQdzGbzQ#2Cas5-KhfyIOoScmQXZMWAPNhwGelUhY4l0_DLRBdJk" target="_blank">
 <button>Download</button>
 </a>
 </div>
 
+<!-- NFS Carbon -->
 <div class="game-card">
+<img src="nfscarbon.jpg">
 <h3>NFS Carbon</h3>
-<p>Need for Speed: Carbon is a stylish street racing game developed by EA Black Box and published by Electronic Arts, serving as a direct follow-up to Most Wanted where you return to the city of Palmont to take control of territories from rival crews, introducing a unique crew system that lets you recruit teammates with special abilities like drafting, blocking, or scouting shortcuts during races; the game is especially known for its intense nighttime atmosphere, canyon duels where one mistake can send your car falling off a cliff, and deep car customization through the Autosculpt feature that allows precise visual tuning, while offering a mix of muscle, tuner, and exotic cars, making it a fan-favorite for its combination of strategy, racing, and cinematic street racing vibes..</p>
-<a href="YOUR_MEDIAFIRE_LINK" target="_blank">
+<p>Night racing with canyon battles and crew system.</p>
+<a href="#">
 <button>Download</button>
 </a>
 </div>
 
+<!-- NFS MW 2012 -->
 <div class="game-card">
+<img src="nfsmw2012.jpg">
 <h3>NFS MW 2012</h3>
-<p>Need for Speed: Most Wanted is a high-speed open-world racing game developed by Criterion Games and published by Electronic Arts, offering a very different experience from the 2005 version by focusing more on fast-paced arcade racing and exploration rather than a deep story; set in the vibrant city of Fairhaven, the game lets you freely drive around to discover cars instantly (instead of buying them), jump into events seamlessly, and compete against the “Most Wanted” list racers to take their cars, all while engaging in aggressive police chases that feel more like Burnout Paradise due to its crash mechanics and takedown system, where smashing opponents and using nitro boosts is key to winning; it also features the Autolog system, which connects you with friends to compare scores and compete asynchronously, adding a social competitive edge, while the graphics are much more modern with detailed cars, lighting, and effects, making it visually impressive but also more demanding on hardware, and overall it’s loved for its speed, freedom, and adrenaline-filled gameplay even though some fans of the original missed the story-driven Blacklist progression..</p>
+<p>Fast open world racing with modern graphics.</p>
 <a href="https://mega.nz/file/EFtgGIoQ#zNb7Xw0xn0EtXZXHgLdueloEURG1K_QTHG-p-WiJb48" target="_blank">
 <button>Download</button>
 </a>
 </div>
 
+<!-- GTA SA -->
 <div class="game-card">
+<img src="gtasa.jpg">
 <h3>GTA San Andreas</h3>
-<p>Grand Theft Auto: San Andreas is a legendary open-world action game developed by Rockstar North and published by Rockstar Games, where you play as Carl “CJ” Johnson returning to his hometown of Los Santos after his mother’s death, only to get pulled back into gang life, crime, and corruption across the massive state of San Andreas, which includes three major cities and rural areas; the game offers unmatched freedom with missions involving heists, gang wars, driving, flying, and even managing CJ’s lifestyle like eating, working out, and learning skills, while also featuring a wide range of vehicles, weapons, and customization options, and its deep storyline, memorable characters, and iconic soundtrack have made it one of the most beloved and influential games of all time, still widely played today thanks to mods and its smooth performance on low to mid-range PCs..</p>
-<a href="YOUR_MEDIAFIRE_LINK" target="_blank">
+<p>Legendary open world action and story game.</p>
+<a href="#">
 <button>Download</button>
 </a>
-    
 </div>
 
+</div>
+
+<!-- Comment Section -->
 <div class="comment-box">
 <h2>💬 Comment Section</h2>
 
