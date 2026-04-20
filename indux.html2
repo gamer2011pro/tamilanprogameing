@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tamilan Pro Gaming | NFS & GTA Mods</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Download NFS MW, GTA San Andreas mods. Tamilan Pro Gaming mods hub.">
+<meta name="keywords" content="NFS MW mods, GTA mods, gaming mods, Tamil gaming">
+<meta name="author" content="Tamilan Pro Gaming">
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0f0f0f, #1a0033);
+    color: white;
+    text-align: center;
+}
+
+/* Navbar */
+nav {
+    background: black;
+    padding: 10px;
+}
+nav a {
+    color: cyan;
+    margin: 10px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo */
+.logo {
+    width: 150px;
+    margin-top: 20px;
+    filter: drop-shadow(0 0 15px cyan);
+}
+
+/* Header */
+header {
+    font-size: 35px;
+    padding: 10px;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
+}
+
+.game-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-card {
+    background: rgba(0,0,0,0.7);
+    margin: 20px;
+    padding: 15px;
+    width: 260px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #ff00ff;
+    transition: 0.3s;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px cyan;
+}
+
+/* Images */
+.game-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Button */
+button {
+    padding: 10px 20px;
+    background: linear-gradient(45deg, #ff00ff, #00ffff);
+    border: none;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 20px;
+}
+
+button:hover {
+    box-shadow: 0 0 15px white;
+}
+
+/* Comment Section */
+.comment-box {
+    margin: 40px;
+}
+
+input, textarea {
+    width: 70%;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+.comment {
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    margin: 10px auto;
+    width: 70%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+<a href="#">Home</a>
+<a href="#">Games</a>
+<a href="#">Contact</a>
+</nav>
+
+<!-- Logo -->
+<img src="logo.png" class="logo">
+
+<header>
+🔥 Tamilan Pro Gaming 🎮
+</header>
+
+<h2>Neon Anime Gaming Mods Hub</h2>
+
+<div class="game-container">
+
+<div class="game-card">
+<img src="nfsmw.jpg">
+<h3>NFS MW 2005</h3>
+<p>Classic blacklist racing with intense police chases.</p>
+<a href="YOUR_LINK" target="_blank">
+<button>Download</button>
+</a>
+</div>
+
+<div class="game-card">
+<img src="nfscarbon.jpg">
+<h3>NFS Carbon</h3>
+<p>Night racing with canyon battles.</p>
+<a href="YOUR_LINK">
+<button>Download</button>
+</a>
+</div>
+
+<div class="game-card">
+<img src="nfsmw2012.jpg">
+<h3>NFS MW 2012</h3>
+<p>Fast open world racing experience.</p>
+<a href="YOUR_LINK">
+<button>Download</button>
+</a>
+</div>
+
+<div class="game-card">
+<img src="gtasa.jpg">
+<h3>GTA San Andreas</h3>
+<p>Legendary open world action game.</p>
+<a href="YOUR_LINK">
+<button>Download</button>
+</a>
+</div>
+
+</div>
+
+<!-- Comment Section -->
+<div class="comment-box">
+<h2>💬 Comment Section</h2>
+
+<input type="text" id="name" placeholder="Your Name"><br>
+<textarea id="comment" placeholder="Write your comment"></textarea><br>
+<button onclick="addComment()">Post Comment</button>
+
+<div id="comments"></div>
+</div>
+
+<script>
+function addComment() {
+    var name = document.getElementById("name").value;
+    var comment = document.getElementById("comment").value;
+
+    if(name === "" || comment === "") {
+        alert("Fill all fields!");
+        return;
+    }
+
+    var div = document.createElement("div");
+    div.className = "comment";
+    div.innerHTML = "<b>" + name + "</b>: " + comment;
+
+    document.getElementById("comments").appendChild(div);
+
+    document.getElementById("name").value = "";
+    document.getElementById("comment").value = "";
+}
+</script>
+
+</body>
+</html>
