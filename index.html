@@ -385,28 +385,48 @@ function searchGames() {
 <button onclick="addComment()">Post Comment</button>
 
 <div id="comments"></div>
-</div>
-
 <script>
-function addComment() {
-    var name = document.getElementById("name").value;
-    var comment = document.getElementById("comment").value;
+window.onload = function () {
+    loadComments();
+};
 
-    if(name === "" || comment === "") {
-        alert("Fill all fields!");
+function addComment() {
+    let name = document.getElementById("name").value.trim();
+    let comment = document.getElementById("comment").value.trim();
+
+    if (name === "" || comment === "") {
+        alert("Please fill in all fields!");
         return;
     }
 
-    var div = document.createElement("div");
-    div.className = "comment";
-    div.innerHTML = "<b>" + name + "</b>: " + comment;
+    let comments = JSON.parse(localStorage.getItem("comments")) || [];
 
-    document.getElementById("comments").appendChild(div);
+    comments.push({
+        name: name,
+        comment: comment
+    });
+
+    localStorage.setItem("comments", JSON.stringify(comments));
 
     document.getElementById("name").value = "";
     document.getElementById("comment").value = "";
+
+    loadComments();
+}
+
+function loadComments() {
+    let comments = JSON.parse(localStorage.getItem("comments")) || [];
+    let container = document.getElementById("comments");
+
+    container.innerHTML = "";
+
+    comments.forEach(function(item) {
+        let div = document.createElement("div");
+        div.className = "comment";
+        div.innerHTML = "<b>" + item.name + "</b><br>" + item.comment;
+        container.appendChild(div);
+    });
 }
 </script>
-
 </body>
 </html>
