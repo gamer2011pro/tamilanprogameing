@@ -131,7 +131,32 @@ input, textarea {
 </header>
 
 <h2>Neon Anime Gaming Hub</h2>
+<!-- Search Bar -->
+<div style="margin:20px;">
+    <input
+        type="text"
+        id="searchBar"
+        placeholder="🔍 Search Games..."
+        onkeyup="searchGames()"
+        style="width:80%;max-width:500px;padding:12px;font-size:16px;border:2px solid cyan;border-radius:30px;background:#111;color:#fff;outline:none;box-shadow:0 0 15px cyan;">
+</div>
 
+<script>
+function searchGames() {
+    let input = document.getElementById("searchBar").value.toLowerCase();
+    let games = document.getElementsByClassName("game-card");
+
+    for (let i = 0; i < games.length; i++) {
+        let title = games[i].getElementsByTagName("h3")[0];
+
+        if (title.innerHTML.toLowerCase().includes(input)) {
+            games[i].style.display = "block";
+        } else {
+            games[i].style.display = "none";
+        }
+    }
+}
+</script>
 <div class="game-container">
 
 <div class="game-card">
