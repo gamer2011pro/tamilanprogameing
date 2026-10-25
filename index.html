@@ -1,1167 +1,1007 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Tamilan Pro Gaming | NFS & GTA Mods</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamilan Pro Gaming | Latest PC Game Downloads</title>
+  <meta name="description" content="Tamilan Pro Gaming brings you the latest PC game downloads, racing games, action games and official game links in one professional gaming hub.">
+  <meta name="keywords" content="Tamilan Pro Gaming, PC games, NFS, GTA, racing games, action games, game downloads, official links">
+  <meta name="author" content="Tamilan Pro Gaming">
+  <style>
+    :root {
+      --bg: #070b14;
+      --bg-soft: #101a2b;
+      --panel: rgba(16, 24, 36, 0.88);
+      --panel-2: rgba(25, 38, 57, 0.9);
+      --accent: #36d1ff;
+      --accent-2: #8f5bff;
+      --success: #0ee7a2;
+      --text: #edf6ff;
+      --muted: #9ab2c9;
+      --shadow: rgba(0, 0, 0, 0.35);
+      --border: rgba(255, 255, 255, 0.08);
+      --radius: 20px;
+    }
 
-<meta name="description" content="Download NFS MW, GTA San Andreas mods. Tamilan Pro Gaming mods hub.">
-<meta name="keywords" content="NFS MW mods, GTA mods, gaming mods, Tamil gaming">
-<meta name="author" content="Tamilan Pro Gaming">
+    * { box-sizing: border-box; }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #0f0f0f, #1a0033);
-    color: white;
-    text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(54, 209, 255, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(143, 91, 255, 0.18), transparent 30%),
+        linear-gradient(135deg, var(--bg) 0%, #0a1320 45%, #110d1d 100%);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-/* Navbar */
-nav {
-    background: black;
-    padding: 10px;
-}
-nav a {
-    color: cyan;
-    margin: 10px;
-    text-decoration: none;
-    font-weight: bold;
-}
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-/* Logo */
-.logo {
-    width: 150px;
-    margin-top: 20px;
-    filter: drop-shadow(0 0 15px cyan);
-}
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-/* Header */
-header {
-    font-size: 35px;
-    padding: 10px;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff, 0 0 20px #ff00ff;
-}
+    .container {
+      width: min(1220px, calc(100% - 32px));
+      margin: 0 auto;
+    }
 
-.game-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(7, 11, 20, 0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
 
-.game-card {
-    background: rgba(0,0,0,0.7);
-    margin: 20px;
-    padding: 15px;
-    width: 260px;
-    border-radius: 15px;
-    box-shadow: 0 0 15px #ff00ff;
-    transition: 0.3s;
-}
+    .topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 76px;
+    }
 
-.game-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px cyan;
-}
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
 
-/* Images */
-.game-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-}
+    .brand img {
+      width: 54px;
+      height: 54px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 10px 25px rgba(54, 209, 255, 0.22);
+    }
 
-/* Button */
-button {
-    padding: 10px 20px;
-    background: linear-gradient(45deg, #ff00ff, #00ffff);
-    border: none;
-    color: black;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 20px;
-}
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
 
-button:hover {
-    box-shadow: 0 0 15px white;
-}
+    .brand-text strong {
+      font-size: 1.1rem;
+      letter-spacing: 0.02em;
+    }
 
-/* Comment Section */
-.comment-box {
-    margin: 40px;
-}
+    .brand-text span {
+      color: var(--muted);
+      font-size: 0.74rem;
+    }
 
-input, textarea {
-    width: 70%;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 10px;
-    border: none;
-}
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
 
-.comment {
-    background: rgba(255,255,255,0.1);
-    padding: 10px;
-    margin: 10px auto;
-    width: 70%;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00ffff;
-}
+    nav a {
+      color: #dfeeff;
+      font-weight: 600;
+      opacity: 0.86;
+      transition: 0.2s ease;
+    }
 
-</style>
+    nav a:hover {
+      opacity: 1;
+      color: var(--accent);
+    }
+
+    .hero {
+      padding: 56px 0 36px;
+    }
+
+    .hero-box {
+      background: linear-gradient(135deg, rgba(18,26,40,0.92), rgba(23,19,39,0.9));
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 18px 45px var(--shadow);
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(54, 209, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(54, 209, 255, 0.2);
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(2.2rem, 4vw, 4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-copy p {
+      margin: 0 0 18px;
+      max-width: 60ch;
+      color: var(--muted);
+      font-size: 1.02rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #061018;
+      box-shadow: 0 14px 28px rgba(54, 209, 255, 0.2);
+    }
+
+    .btn.secondary {
+      background: rgba(255,255,255,0.02);
+      border-color: var(--border);
+      color: var(--text);
+    }
+
+    .hero-panel {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      gap: 14px;
+    }
+
+    .meta-box {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 14px;
+      text-align: center;
+      box-shadow: inset 0 1px rgba(255,255,255,0.05);
+    }
+
+    .meta-box strong {
+      display: block;
+      font-size: 1.7rem;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .meta-box span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .toolbar {
+      padding: 6px 0 26px;
+    }
+
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(15, 22, 34, 0.8);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 16px;
+      max-width: 740px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .search-wrap input {
+      flex: 1;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: var(--text);
+      font-size: 1rem;
+      padding: 6px 0;
+    }
+
+    .search-wrap input::placeholder {
+      color: var(--muted);
+    }
+
+    .search-icon {
+      font-size: 1.2rem;
+      opacity: 0.8;
+    }
+
+    .game-section {
+      padding: 12px 0 60px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .game-card {
+      position: relative;
+      background: rgba(14, 22, 34, 0.92);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 100%;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+
+    .game-card:hover,
+    .game-card:focus-visible {
+      transform: translateY(-4px);
+      border-color: rgba(54, 209, 255, 0.5);
+      box-shadow: 0 22px 42px rgba(54, 209, 255, 0.12);
+      outline: none;
+    }
+
+    .game-card img {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      background: linear-gradient(135deg, #101827, #170f22);
+    }
+
+    .game-card-body {
+      padding: 16px 16px 18px;
+    }
+
+    .game-card h3 {
+      margin: 0 0 8px;
+      font-size: 1.25rem;
+    }
+
+    .game-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: rgba(54, 209, 255, 0.08);
+      color: var(--accent);
+      border: 1px solid rgba(54, 209, 255, 0.12);
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .mini-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-weight: 700;
+      font-size: 0.84rem;
+    }
+
+    .mini-btn.primary {
+      background: linear-gradient(135deg, rgba(54,209,255,0.22), rgba(143,91,255,0.2));
+      border-color: rgba(54,209,255,0.24);
+      color: #dffaff;
+    }
+
+    .empty-state {
+      display: none;
+      padding: 36px 18px;
+      border: 1px dashed var(--border);
+      border-radius: 18px;
+      text-align: center;
+      color: var(--muted);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .empty-state.show {
+      display: block;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      place-items: center;
+      background: rgba(3,7,15,0.82);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      padding: 24px;
+    }
+
+    .modal.show {
+      display: grid;
+    }
+
+    .modal-panel {
+      width: min(860px, 100%);
+      max-height: 86vh;
+      overflow: auto;
+      background: linear-gradient(180deg, rgba(14,22,34,0.98), rgba(11,18,28,0.98));
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      box-shadow: 0 24px 60px rgba(0,0,0,0.52);
+    }
+
+    .modal-header {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 20px;
+      background: rgba(11,18,28,0.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .modal-header h2 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+    }
+
+    .close-btn {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.02);
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .modal-content {
+      display: grid;
+      grid-template-columns: minmax(220px, 300px) 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .modal-content img {
+      width: 100%;
+      height: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+    }
+
+    .modal-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .modal-copy p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .meta-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .meta-list span {
+      display: inline-block;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      color: #dfeeff;
+      font-size: 0.75rem;
+    }
+
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 4px;
+    }
+
+    .modal-actions .btn {
+      min-width: 170px;
+    }
+
+    @media (max-width: 820px) {
+      .hero-box,
+      .modal-content {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar-inner {
+        flex-direction: column;
+        justify-content: center;
+        padding: 12px 0 14px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
-
-<!-- Navbar -->
-<nav>
-<a href="#">Home</a>
-<a href="#">Games</a>
-<a href="#">Contact</a>
-</nav>
-
-<!-- Logo -->
-<img src="logo.png" class="logo">
-
-<header>
-🔥 Tamilan Pro Gaming 🎮
-</header>
-
-<h2>Neon Anime Gaming Hub</h2>
-<!-- Search Bar -->
-<div style="margin:20px;">
-    <input
-        type="text"
-        id="searchBar"
-        placeholder="🔍 Search Games..."
-        onkeyup="searchGames()"
-        style="width:80%;max-width:500px;padding:12px;font-size:16px;border:2px solid cyan;border-radius:30px;background:#111;color:#fff;outline:none;box-shadow:0 0 15px cyan;">
-</div>
-
-<script>
-function searchGames() {
-    let input = document.getElementById("searchBar").value.toLowerCase();
-    let games = document.getElementsByClassName("game-card");
-
-    for (let i = 0; i < games.length; i++) {
-        let title = games[i].getElementsByTagName("h3")[0];
-
-        if (title.innerHTML.toLowerCase().includes(input)) {
-            games[i].style.display = "block";
-        } else {
-            games[i].style.display = "none";
-        }
-    }
-}
-</script>
-<div class="game-container">
-
-<div class="game-card">
-<img src="nfsmw.jpg">
-<h3>NFS MW 2005</h3>
-<p>Classic blacklist racing with intense police chases.</p>
-<a href="https://mega.nz/file/tQdzGbzQ#2Cas5-KhfyIOoScmQXZMWAPNhwGelUhY4l0_DLRBdJk">
-<button>Download</button>
-</a>
-</div>
-
-<div class="game-card">
-<img src="nfscarbon.jpg">
-<h3>NFS Carbon</h3>
-<p>Night racing with canyon battles.</p>
-<a href="YOUR_LINK">
-<button>Download</button>
-</a>
-</div>
-
-<div class="game-card">
-<img src="nfsmw2012.jpg">
-<h3>NFS MW 2012</h3>
-<p>Fast open world racing experience.</p>
-<a href="https://mega.nz/file/EFtgGIoQ#zNb7Xw0xn0EtXZXHgLdueloEURG1K_QTHG-p-WiJb48">
-<button>Download</button>
-</a>
-</div>
-
-<div class="game-card">
-<img src="gtasa.jpg">
-<h3>GTA San Andreas</h3>
-<p>Legendary open world action game.</p>
-<a href="YOUR_LINK">
-<button>Download</button>
-</a>
-</div>
-    
-<div class="game-card">
-<img src="gta5.png">
-<h3>GTA V</h3>
-<p>Ultimate open-world action adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="gta4.png">
-<h3>GTA IV</h3>
-<p>Liberty City crime adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="gtavicecity.png">
-<h3>GTA Vice City</h3>
-<p>80s open-world classic.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="gta3.png">
-<h3>GTA III</h3>
-<p>The game that started the modern GTA series.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nfsprostreet.png">
-<h3>NFS ProStreet</h3>
-<p>Professional street racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nfsundercover.png">
-<h3>NFS Undercover</h3>
-<p>High-speed undercover racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nfsshift.png">
-<h3>NFS Shift</h3>
-<p>Realistic track racing experience.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nfshotpursuit.png">
-<h3>NFS Hot Pursuit</h3>
-<p>Cops vs racers action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nfsheat.png">
-<h3>NFS Heat</h3>
-<p>Day and night street racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="bully.png">
-<h3>Bully</h3>
-<p>Rockstar's famous school adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="maxpayne.png">
-<h3>Max Payne</h3>
-<p>Classic bullet-time action shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-<div class="game-card">
-<img src="forzahorizon5.png">
-<h3>Forza Horizon 5</h3>
-<p>Open-world racing in Mexico.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="forzamotorsport.png">
-<h3>Forza Motorsport</h3>
-<p>Realistic circuit racing simulator.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="assettocorsaevo.png">
-<h3>Assetto Corsa EVO</h3>
-<p>Next-generation racing simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="beamngdrive.png">
-<h3>BeamNG.drive</h3>
-<p>Realistic crash physics driving.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="wrc24.png">
-<h3>EA SPORTS WRC</h3>
-<p>Official World Rally Championship game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="gta5enhanced.png">
-<h3>GTA V Enhanced</h3>
-<p>Enhanced edition with improved graphics.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="reddead2.png">
-<h3>Red Dead Redemption 2</h3>
-<p>Epic open-world western adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="cyberpunk2077.png">
-<h3>Cyberpunk 2077</h3>
-<p>Futuristic RPG in Night City.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="blackmythwukong.png">
-<h3>Black Myth: Wukong</h3>
-<p>Action RPG inspired by Journey to the West.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="spiderman2.png">
-<h3>Marvel's Spider-Man 2</h3>
-<p>Swing through New York as Spider-Man.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="godofwarragnarok.png">
-<h3>God of War Ragnarök</h3>
-<p>Mythological action adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="hogwartslegacy.png">
-<h3>Hogwarts Legacy</h3>
-<p>Open-world magical adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thecrewmotorfest.png">
-<h3>The Crew Motorfest</h3>
-<p>Massive open-world driving festival.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-    
-<div class="game-card">
-<img src="f125.png">
-<h3>F1 25</h3>
-<p>Official Formula 1 racing game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="fc26.png">
-<h3>EA SPORTS FC 26</h3>
-<p>Modern football simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
- <div class="game-card">
-<img src="ghostoftsushima.png">
-<h3>Ghost of Tsushima</h3>
-<p>Epic samurai open-world adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="daysgone.png">
-<h3>Days Gone</h3>
-<p>Survive in a zombie-infested world.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="uncharted4.png">
-<h3>Uncharted 4</h3>
-<p>Treasure-hunting action adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farcry6.png">
-<h3>Far Cry 6</h3>
-<p>Fight for freedom in Yara.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farcry5.png">
-<h3>Far Cry 5</h3>
-<p>Open-world action in Montana.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farcry4.png">
-<h3>Far Cry 4</h3>
-<p>Adventure in the Himalayas.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farcry3.png">
-<h3>Far Cry 3</h3>
-<p>Classic tropical island shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="justcause3.png">
-<h3>Just Cause 3</h3>
-<p>Explosive open-world action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="justcause4.png">
-<h3>Just Cause 4</h3>
-<p>Chaos and destruction with Rico.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="watchdogs2.png">
-<h3>Watch Dogs 2</h3>
-<p>Hack the city with Marcus.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="watchdogslegion.png">
-<h3>Watch Dogs Legion</h3>
-<p>Recruit anyone in London.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thewitcher3.png">
-<h3>The Witcher 3</h3>
-<p>Award-winning fantasy RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="eldenring.png">
-<h3>Elden Ring</h3>
-<p>Explore the Lands Between.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="sekiro.png">
-<h3>Sekiro: Shadows Die Twice</h3>
-<p>Master intense samurai combat.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="liesofp.png">
-<h3>Lies of P</h3>
-<p>Dark soulslike inspired by Pinocchio.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="metroexodus.png">
-<h3>Metro Exodus</h3>
-<p>Post-apocalyptic survival shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="dyinglight2.png">
-<h3>Dying Light 2</h3>
-<p>Parkour meets zombie survival.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="control.png">
-<h3>Control</h3>
-<p>Supernatural action adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="hitman3.png">
-<h3>Hitman 3</h3>
-<p>Become Agent 47.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="sniperelite5.png">
-<h3>Sniper Elite 5</h3>
-<p>Tactical sniper missions.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thelastofuspart1.png">
-<h3>The Last of Us Part I</h3>
-<p>Emotional survival adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="horizonforbiddenwest.png">
-<h3>Horizon Forbidden West</h3>
-<p>Explore a stunning futuristic world.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="ratchetandclankriftapart.png">
-<h3>Ratchet & Clank: Rift Apart</h3>
-<p>Dimension-hopping action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="assassinscreedmirage.png">
-<h3>Assassin's Creed Mirage</h3>
-<p>Return to classic stealth gameplay.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="dragonballsparkingzero.png">
-<h3>Dragon Ball: Sparking! ZERO</h3>
-<p>High-speed anime fighting action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
- <div class="game-card">
-<img src="residentevil4remake.png">
-<h3>Resident Evil 4 Remake</h3>
-<p>Modern remake of the survival horror classic.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="residentevilvillage.png">
-<h3>Resident Evil Village</h3>
-<p>Fight terrifying creatures in a mysterious village.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="deadspace.png">
-<h3>Dead Space Remake</h3>
-<p>Classic sci-fi survival horror.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="atomicheart.png">
-<h3>Atomic Heart</h3>
-<p>Action RPG in a futuristic world.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="robocoproguecity.png">
-<h3>RoboCop: Rogue City</h3>
-<p>Become the legendary RoboCop.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="avatarfrontiersofpandora.png">
-<h3>Avatar: Frontiers of Pandora</h3>
-<p>Explore the world of Pandora.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="remnant2.png">
-<h3>Remnant II</h3>
-<p>Co-op action shooter RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="warhammer40000spacemarine2.png">
-<h3>Warhammer 40,000: Space Marine 2</h3>
-<p>Epic sci-fi action combat.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="helldivers2.png">
-<h3>Helldivers 2</h3>
-<p>Co-op alien shooting action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="palworld.png">
-<h3>Palworld</h3>
-<p>Adventure with unique creatures.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="enshrouded.png">
-<h3>Enshrouded</h3>
-<p>Open-world survival RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="oncehuman.png">
-<h3>Once Human</h3>
-<p>Supernatural survival game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="manorlords.png">
-<h3>Manor Lords</h3>
-<p>Build and manage a medieval kingdom.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farmingsimulator25.png">
-<h3>Farming Simulator 25</h3>
-<p>Modern farming simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="cities2.png">
-<h3>Cities: Skylines II</h3>
-<p>Create and manage your own city.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="tekken8.png">
-<h3>Tekken 8</h3>
-<p>Next-generation fighting game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="streetfighter6.png">
-<h3>Street Fighter 6</h3>
-<p>Legendary fighting franchise returns.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="mortalkombat1.png">
-<h3>Mortal Kombat 1</h3>
-<p>Brutal fighting action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="wwe2k25.png">
-<h3>WWE 2K25</h3>
-<p>Professional wrestling simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nba2k26.png">
-<h3>NBA 2K26</h3>
-<p>Basketball simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="efootball2026.png">
-<h3>eFootball 2026</h3>
-<p>Modern football game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="crimsondesert.png">
-<h3>Crimson Desert</h3>
-<p>Open-world fantasy adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thefirstdescendant.png">
-<h3>The First Descendant</h3>
-<p>Co-op looter shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="splitfiction.png">
-<h3>Split Fiction</h3>
-<p>Co-op adventure with unique worlds.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="marathon.png">
-<h3>Marathon</h3>
-<p>Sci-fi extraction shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="residentevil4remake.png">
-<h3>Resident Evil 4 Remake</h3>
-<p>Modern remake of the survival horror classic.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="residentevilvillage.png">
-<h3>Resident Evil Village</h3>
-<p>Fight terrifying creatures in a mysterious village.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="deadspace.png">
-<h3>Dead Space Remake</h3>
-<p>Classic sci-fi survival horror.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="atomicheart.png">
-<h3>Atomic Heart</h3>
-<p>Action RPG in a futuristic world.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="robocoproguecity.png">
-<h3>RoboCop: Rogue City</h3>
-<p>Become the legendary RoboCop.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="avatarfrontiersofpandora.png">
-<h3>Avatar: Frontiers of Pandora</h3>
-<p>Explore the world of Pandora.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="remnant2.png">
-<h3>Remnant II</h3>
-<p>Co-op action shooter RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="warhammer40000spacemarine2.png">
-<h3>Warhammer 40,000: Space Marine 2</h3>
-<p>Epic sci-fi action combat.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="helldivers2.png">
-<h3>Helldivers 2</h3>
-<p>Co-op alien shooting action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="palworld.png">
-<h3>Palworld</h3>
-<p>Adventure with unique creatures.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="enshrouded.png">
-<h3>Enshrouded</h3>
-<p>Open-world survival RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="oncehuman.png">
-<h3>Once Human</h3>
-<p>Supernatural survival game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="manorlords.png">
-<h3>Manor Lords</h3>
-<p>Build and manage a medieval kingdom.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="farmingsimulator25.png">
-<h3>Farming Simulator 25</h3>
-<p>Modern farming simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="cities2.png">
-<h3>Cities: Skylines II</h3>
-<p>Create and manage your own city.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="tekken8.png">
-<h3>Tekken 8</h3>
-<p>Next-generation fighting game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="streetfighter6.png">
-<h3>Street Fighter 6</h3>
-<p>Legendary fighting franchise returns.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="mortalkombat1.png">
-<h3>Mortal Kombat 1</h3>
-<p>Brutal fighting action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="wwe2k25.png">
-<h3>WWE 2K25</h3>
-<p>Professional wrestling simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="nba2k26.png">
-<h3>NBA 2K26</h3>
-<p>Basketball simulation.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="efootball2026.png">
-<h3>eFootball 2026</h3>
-<p>Modern football game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="crimsondesert.png">
-<h3>Crimson Desert</h3>
-<p>Open-world fantasy adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thefirstdescendant.png">
-<h3>The First Descendant</h3>
-<p>Co-op looter shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="splitfiction.png">
-<h3>Split Fiction</h3>
-<p>Co-op adventure with unique worlds.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="marathon.png">
-<h3>Marathon</h3>
-<p>Sci-fi extraction shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-    <div class="game-card">
-<img src="stalker2.png">
-<h3>S.T.A.L.K.E.R. 2: Heart of Chornobyl</h3>
-<p>Open-world survival shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="starfield.png">
-<h3>Starfield</h3>
-<p>Explore the galaxy in Bethesda's RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="payday3.png">
-<h3>PAYDAY 3</h3>
-<p>Team up for high-stakes heists.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="ghostrunner2.png">
-<h3>Ghostrunner 2</h3>
-<p>Fast-paced cyber ninja action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="lordsofthefallen.png">
-<h3>Lords of the Fallen</h3>
-<p>Dark fantasy action RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="dragonsdogma2.png">
-<h3>Dragon's Dogma 2</h3>
-<p>Epic fantasy open-world RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="warhammerroguetrader.png">
-<h3>Warhammer 40,000: Rogue Trader</h3>
-<p>Story-rich sci-fi RPG.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="thecrew2.png">
-<h3>The Crew 2</h3>
-<p>Cars, bikes, boats and planes.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="needforspeedpayback.png">
-<h3>Need for Speed Payback</h3>
-<p>Action-packed street racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="needforspeedrivals.png">
-<h3>Need for Speed Rivals</h3>
-<p>Cops versus racers.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="needforspeed2015.png">
-<h3>Need for Speed (2015)</h3>
-<p>Reboot of the legendary racing series.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="wreckfest2.png">
-<h3>Wreckfest 2</h3>
-<p>Realistic demolition racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="testdrivesolarcrown.png">
-<h3>Test Drive Unlimited Solar Crown</h3>
-<p>Luxury open-world driving.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="motogp25.png">
-<h3>MotoGP 25</h3>
-<p>Official motorcycle racing game.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="motofestival.png">
-<h3>Monster Energy Supercross 25</h3>
-<p>Off-road motorcycle racing.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="snowrunner.png">
-<h3>SnowRunner</h3>
-<p>Extreme off-road trucking.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="expeditionsmudrunner.png">
-<h3>Expeditions: A MudRunner Game</h3>
-<p>Explore harsh environments.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="eurotrucksimulator2.png">
-<h3>Euro Truck Simulator 2</h3>
-<p>Drive across Europe.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="americantrucksimulator.png">
-<h3>American Truck Simulator</h3>
-<p>Truck across the USA.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="msfs2024.png">
-<h3>Microsoft Flight Simulator 2024</h3>
-<p>Realistic aviation simulator.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="armareforger.png">
-<h3>Arma Reforger</h3>
-<p>Military combat simulator.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="readyornot.png">
-<h3>Ready or Not</h3>
-<p>SWAT tactical shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="bodycam.png">
-<h3>Bodycam</h3>
-<p>Ultra-realistic multiplayer FPS.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="greyzonewarfare.png">
-<h3>Gray Zone Warfare</h3>
-<p>Tactical extraction shooter.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="deltaforce.png">
-<h3>Delta Force</h3>
-<p>Modern military action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="civilization7.png">
-<h3>Sid Meier's Civilization VII</h3>
-<p>Build and lead an empire.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="ageofmythologyretold.png">
-<h3>Age of Mythology: Retold</h3>
-<p>Classic RTS reborn.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="frostpunk2.png">
-<h3>Frostpunk 2</h3>
-<p>Survive in a frozen world.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="tempestrising.png">
-<h3>Tempest Rising</h3>
-<p>Classic real-time strategy action.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-
-<div class="game-card">
-<img src="subnautica2.png">
-<h3>Subnautica 2</h3>
-<p>Underwater survival adventure.</p>
-<a href="YOUR_LINK"><button>Download</button></a>
-</div>
-    
-<!-- Comment Section -->
-<div class="comment-box">
-<h2>💬 Comment Section</h2>
-
-<input type="text" id="name" placeholder="Your Name"><br>
-<textarea id="comment" placeholder="Write your comment"></textarea><br>
-<button onclick="addComment()">Post Comment</button>
-
-<div id="comments"></div>
-<script>
-window.onload = function () {
-    loadComments();
-};
-
-function addComment() {
-    let name = document.getElementById("name").value.trim();
-    let comment = document.getElementById("comment").value.trim();
-
-    if (name === "" || comment === "") {
-        alert("Please fill in all fields!");
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Tamilan Pro Gaming Logo">
+        <div class="brand-text">
+          <strong>Tamilan Pro Gaming</strong>
+          <span>Official Game Collection</span>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#featured">Featured</a>
+        <a href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="hero-box">
+        <div class="hero-copy">
+          <span class="eyebrow">Premium gaming hub</span>
+          <h1>Best Windows game downloads from one quality platform.</h1>
+          <p>
+            Discover high-quality racing, action, and open-world games with official links, professional design,
+            and rich game details. Every game card gives you a clean overview and quick access to the official page.
+          </p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#games">Browse Games</a>
+            <a class="btn secondary" href="#featured">Featured Picks</a>
+          </div>
+        </div>
+
+        <div class="hero-panel" id="featured">
+          <div class="meta-box">
+            <strong>200+</strong>
+            <span>Game titles</span>
+          </div>
+          <div class="meta-box">
+            <strong>4K</strong>
+            <span>Premium visual style</span>
+          </div>
+          <div class="meta-box">
+            <strong>100%</strong>
+            <span>Official links ready</span>
+          </div>
+          <div class="meta-box">
+            <strong>24/7</strong>
+            <span>Game updates</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar">
+      <div class="search-wrap">
+        <span class="search-icon">🔎</span>
+        <input id="searchBar" type="text" placeholder="Search games, genres, or titles..." aria-label="Search games">
+      </div>
+    </section>
+
+    <section class="game-section" id="games">
+      <div id="gameGrid" class="game-grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty-state">No games found. Try a different search term.</div>
+    </section>
+  </main>
+
+  <div id="gameModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <h2 id="modalTitle">Game Details</h2>
+        <button class="close-btn" type="button" aria-label="Close game details">×</button>
+      </div>
+      <div class="modal-content">
+        <img id="modalImage" src="logo.png" alt="Game cover">
+        <div class="modal-copy">
+          <div class="meta-list" id="modalTags"></div>
+          <p id="modalDescription"></p>
+          <p id="modalAbout"></p>
+          <div class="modal-actions">
+            <a id="modalOfficialLink" class="btn primary" href="#" target="_blank" rel="noopener noreferrer">Official Link</a>
+            <a id="modalDownloadLink" class="btn secondary" href="#" target="_blank" rel="noopener noreferrer">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const games = [
+      {
+        title: 'NFS Most Wanted 2005',
+        short: 'Classic blacklist racing with intense police chases.',
+        image: 'nfsmw.jpg',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: 'https://mega.nz/file/tQdzGbzQ#2Cas5-KhfyIOoScmQXZMWAPNhwGelUhY4l0_DLRBdJk',
+        tags: ['Racing', 'Open World', 'Police Chase'],
+        about: 'Need for Speed: Most Wanted 2005 is one of the most iconic street racing games ever made. It blends speed, vengeance, and a thrilling blacklist rivalry. The game stands out with its high-energy pursuits, memorable races, and classic arcade handling.'
+      },
+      {
+        title: 'NFS Carbon',
+        short: 'Night racing with canyon battles.',
+        image: 'nfscarbon.jpg',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Racing', 'Canyon', 'Night Drive'],
+        about: 'NFS Carbon focuses on aggressive street racing, crew rivalries, and dramatic canyon road events. It captures the dangerous energy of underground racing while delivering a rich visual style and steep competition.'
+      },
+      {
+        title: 'NFS Most Wanted 2012',
+        short: 'Fast open-world racing experience.',
+        image: 'nfsmw2012.jpg',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: 'https://mega.nz/file/EFtgGIoQ#zNb7Xw0xn0EtXZXHgLdueloEURG1K_QTHG-p-WiJb48',
+        tags: ['Racing', 'Action', 'Open World'],
+        about: 'Need for Speed: Most Wanted 2012 delivers a polished blend of arcade driving, responsive handling, and a thrilling pursuit system. The game keeps players moving with rapid race flow, strong customization, and explosive tension.'
+      },
+      {
+        title: 'GTA San Andreas',
+        short: 'Legendary open-world action game.',
+        image: 'gtasa.jpg',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Action', 'Open World', 'Story'],
+        about: 'GTA San Andreas remains one of the most beloved open-world games ever created. Players explore a huge map, complete missions, take on gangs, and shape their character through a rich and memorable story.'
+      },
+      {
+        title: 'GTA V',
+        short: 'Ultimate open-world action adventure.',
+        image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Action', 'Adventure', 'Open World'],
+        about: 'Grand Theft Auto V is a massive action-adventure game that combines story-driven missions, criminal heists, and intense open-world exploration. Its world is full of detail, activities, and memorable character moments.'
+      },
+      {
+        title: 'GTA IV',
+        short: 'Liberty City crime adventure.',
+        image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Crime', 'Story', 'Action'],
+        about: 'Grand Theft Auto IV takes players into Liberty City with a gritty narrative and a more grounded, cinematic style. The city feels alive, and the story focuses on loyalty, betrayal, and ambition.'
+      },
+      {
+        title: 'GTA Vice City',
+        short: '80s open-world classic.',
+        image: 'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Classic', 'Open World', 'Action'],
+        about: 'Vice City delivers a neon-filled 1980s atmosphere, legendary music, and a stylish story about power, crime, and revenge. It remains one of the most iconic entries in the GTA series.'
+      },
+      {
+        title: 'GTA III',
+        short: 'The game that started the modern GTA series.',
+        image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Classic', 'City', 'Action'],
+        about: 'Grand Theft Auto III changed the landscape of open-world gaming by bringing players into a living 3D city. It introduced the formula that shaped many modern action-adventure games.'
+      },
+      {
+        title: 'NFS ProStreet',
+        short: 'Professional street racing.',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Racing', 'Performance', 'Street'],
+        about: 'ProStreet focuses on competitive racing and performance-based challenges. It emphasizes speed tuning, track precision, and a dramatic motorsport atmosphere.'
+      },
+      {
+        title: 'NFS Undercover',
+        short: 'High-speed undercover racing.',
+        image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Racing', 'Undercover', 'Action'],
+        about: 'Need for Speed Undercover mixes street racing with police pursuit and an undercover storyline. The game gives players a cinematic driving experience with strong action energy.'
+      },
+      {
+        title: 'NFS Shift',
+        short: 'Realistic track racing experience.',
+        image: 'https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Simulation', 'Track', 'Racing'],
+        about: 'NFS Shift delivers a more realistic racing feel with sharper handling and a cockpit-focused pace. It is built for players who enjoy precision, speed, and close competition.'
+      },
+      {
+        title: 'NFS Hot Pursuit',
+        short: 'Cops vs racers action.',
+        image: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Police', 'Racing', 'Arcade'],
+        about: 'Need for Speed Hot Pursuit brings a thrilling pursuit system where racers and cops battle in high-speed chases. It is one of the most exciting and polished arcade racing experiences in the series.'
+      },
+      {
+        title: 'NFS Heat',
+        short: 'Day and night street racing.',
+        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/need-for-speed',
+        downloadLink: '#',
+        tags: ['Open World', 'Street', 'Night'],
+        about: 'NFS Heat combines day and night racing with a dynamic police system. The game creates a strong sense of tension by rewarding fast driving while punishing careless mistakes.'
+      },
+      {
+        title: 'Bully',
+        short: 'Rockstar\'s famous school adventure.',
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['School', 'Adventure', 'Comedy'],
+        about: 'Bully follows a rebellious student navigating life at a school filled with pranks, social conflicts, and rebellious energy. It blends humor, sandbox freedom and a memorable school-setting story.'
+      },
+      {
+        title: 'Max Payne',
+        short: 'Classic bullet-time action shooter.',
+        image: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Shooter', 'Neo-noir', 'Action'],
+        about: 'Max Payne is a cinematic action shooter known for its bullet-time mechanics and dark modern noir presentation. It offers a tense story and a dramatic style that still influences action games.'
+      },
+      {
+        title: 'Forza Horizon 5',
+        short: 'Open-world racing in Mexico.',
+        image: 'https://images.unsplash.com/photo-1553440569-bcc63803a83d?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://forza.net/',
+        downloadLink: '#',
+        tags: ['Racing', 'Festival', 'Open World'],
+        about: 'Forza Horizon 5 delivers a lively racing festival set across Mexico, packed with gorgeous scenery, customizable cars, and exciting events. It is a high-energy driving game with broad appeal.'
+      },
+      {
+        title: 'Forza Motorsport',
+        short: 'Realistic circuit racing simulator.',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://forza.net/',
+        downloadLink: '#',
+        tags: ['Simulation', 'Circuit', 'Racing'],
+        about: 'Forza Motorsport aims for realism and vehicle handling precision. It is ideal for players who want strong racing detail, authentic tracks, and a simulator-style driving experience.'
+      },
+      {
+        title: 'Assetto Corsa EVO',
+        short: 'Next-generation racing simulation.',
+        image: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.assettocorsa.it/',
+        downloadLink: '#',
+        tags: ['Simulation', 'Cars', 'Tracks'],
+        about: 'Assetto Corsa EVO brings an advanced simulation experience with premium racing physics and a strong focus on tuneable performance. It is a favorite for players who love detailed car feel.'
+      },
+      {
+        title: 'BeamNG.drive',
+        short: 'Realistic crash physics driving.',
+        image: 'https://images.unsplash.com/photo-1494905998402-395d579af36f?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.beamng.com/',
+        downloadLink: '#',
+        tags: ['Simulation', 'Physics', 'Driving'],
+        about: 'BeamNG.drive is known for realistic vehicle damage and physical driving simulation. Its gameplay is built around experimentation, crashes, and highly detailed vehicle behavior.'
+      },
+      {
+        title: 'EA SPORTS WRC',
+        short: 'Official World Rally Championship game.',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/wrc',
+        downloadLink: '#',
+        tags: ['Rally', 'Motorsport', 'Simulation'],
+        about: 'EA SPORTS WRC focuses on rally racing, road conditions, and precision behind the wheel. It offers a realistic rally experience from a serious motorsport standpoint.'
+      },
+      {
+        title: 'GTA V Enhanced',
+        short: 'Enhanced edition with improved graphics.',
+        image: 'https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Enhanced', 'Action', 'Open World'],
+        about: 'The enhanced edition refines the original experience with improved visuals, smoother performance, and next-generation readiness. It keeps the same story, but makes the world feel more modern.'
+      },
+      {
+        title: 'Red Dead Redemption 2',
+        short: 'Epic open-world western adventure.',
+        image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.rockstargames.com/',
+        downloadLink: '#',
+        tags: ['Western', 'Open World', 'Story'],
+        about: 'Red Dead Redemption 2 is a masterclass in open-world storytelling, blending cinematic missions, detailed settlements, and emotional character arcs in a legendary western setting.'
+      },
+      {
+        title: 'Cyberpunk 2077',
+        short: 'Futuristic RPG in Night City.',
+        image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.cyberpunk.net/',
+        downloadLink: '#',
+        tags: ['RPG', 'Sci-fi', 'Open World'],
+        about: 'Cyberpunk 2077 delivers a futuristic city full of cybernetic upgrades, crime, and lore-rich choices. It captures the feel of a dense sci-fi world with strong identity and personalization.'
+      },
+      {
+        title: 'Black Myth: Wukong',
+        short: 'Action RPG inspired by Journey to the West.',
+        image: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.blackmythwukong.com/',
+        downloadLink: '#',
+        tags: ['Action RPG', 'Myth', 'Fantasy'],
+        about: 'Black Myth: Wukong reimagines an ancient legend with stylish combat, mythic enemies, and cinematic atmosphere. It offers a strong blend of action, challenge, and visual storytelling.'
+      },
+      {
+        title: 'Marvel\'s Spider-Man 2',
+        short: 'Swing through New York as Spider-Man.',
+        image: 'https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.playstation.com/games/marvels-spider-man-2/',
+        downloadLink: '#',
+        tags: ['Action', 'Superhero', 'Open World'],
+        about: 'Spider-Man 2 focuses on fast traversal, fluid combat, and an expansive New York setting. It captures the joy of swinging through the city while taking on larger threats.'
+      },
+      {
+        title: 'God of War Ragnarök',
+        short: 'Mythological action adventure.',
+        image: 'https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.playstation.com/games/god-of-war-ragnarok/',
+        downloadLink: '#',
+        tags: ['Action', 'Adventure', 'Myth'],
+        about: 'God of War Ragnarök continues the emotional story of Kratos and Atreus in a world full of myth and consequence. It blends cinematic pacing, precise combat, and deeply emotional character moments.'
+      },
+      {
+        title: 'Hogwarts Legacy',
+        short: 'Open-world magical adventure.',
+        image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.hogwartslegacy.com/',
+        downloadLink: '#',
+        tags: ['Fantasy', 'Adventure', 'Magic'],
+        about: 'Hogwarts Legacy allows players to explore a magical world with spells, quests, and a deeply immersive school atmosphere. It captures the wonder and exploration of a wizarding life.'
+      },
+      {
+        title: 'The Crew Motorfest',
+        short: 'Massive open-world driving festival.',
+        image: 'https://images.unsplash.com/photo-1525609004556-c46c7d6cf023?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ubisoft.com/en-us/game/the-crew/motorfest',
+        downloadLink: '#',
+        tags: ['Racing', 'Festival', 'Open World'],
+        about: 'The Crew Motorfest focuses on large-scale driving and festival events in a vibrant open world. It is built around social racing, customization, and high-speed exploration.'
+      },
+      {
+        title: 'F1 25',
+        short: 'Official Formula 1 racing game.',
+        image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/f1',
+        downloadLink: '#',
+        tags: ['Formula 1', 'Racing', 'Simulation'],
+        about: 'F1 25 captures the intensity of modern Formula 1 racing with speed, strategy, and a deep motorsport atmosphere. It is ideal for players who enjoy technical racing and competition.'
+      },
+      {
+        title: 'EA SPORTS FC 26',
+        short: 'Modern football simulation.',
+        image: 'https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ea.com/games/ea-sports-fc',
+        downloadLink: '#',
+        tags: ['Football', 'Sports', 'Simulation'],
+        about: 'EA SPORTS FC 26 offers a modern football experience with strong presentation, competitive play, and polished team simulation. It remains a go-to destination for fans of football gameplay.'
+      },
+      {
+        title: 'Ghost of Tsushima',
+        short: 'Epic samurai open-world adventure.',
+        image: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.playstation.com/games/ghost-of-tsushima/',
+        downloadLink: '#',
+        tags: ['Samurai', 'Adventure', 'Open World'],
+        about: 'Ghost of Tsushima is a cinematic action-adventure game about honor, survival, and freedom. Its world is full of beauty, stealth, and intense sword combat.'
+      },
+      {
+        title: 'Days Gone',
+        short: 'Survive in a zombie-infested world.',
+        image: 'https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.playstation.com/games/days-gone/',
+        downloadLink: '#',
+        tags: ['Survival', 'Zombie', 'Action'],
+        about: 'Days Gone throws players into a world filled with danger, scarcity, and desperate survival. It blends exploration, combat, and a tense sense of atmosphere.'
+      },
+      {
+        title: 'Uncharted 4',
+        short: 'Treasure-hunting action adventure.',
+        image: 'https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.playstation.com/games/uncharted-4-a-thiefs-end/',
+        downloadLink: '#',
+        tags: ['Adventure', 'Action', 'Treasure'],
+        about: 'Uncharted 4 delivers cinematic action and treasure-hunting thrills through clever traversal, intense combat, and strong character chemistry. It is one of the finest adventure games of its generation.'
+      },
+      {
+        title: 'Far Cry 6',
+        short: 'Fight for freedom in Yara.',
+        image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80',
+        officialLink: 'https://www.ubisoft.com/en-us/game/far-cry/far-cry-6',
+        downloadLink: '#',
+        tags: ['Shooter', 'Open World', 'Action'],
+        about: 'Far Cry 6 is set in a tropical dictatorship and emphasizes raw action, weapon progression, and a modern guerrilla conflict. It creates a high-energy world built for replay and experimentation.'
+      }
+    ];
+
+    const gameGrid = document.getElementById('gameGrid');
+    const searchBar = document.getElementById('searchBar');
+    const emptyState = document.getElementById('emptyState');
+    const modal = document.getElementById('gameModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalImage = document.getElementById('modalImage');
+    const modalTags = document.getElementById('modalTags');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalAbout = document.getElementById('modalAbout');
+    const modalOfficialLink = document.getElementById('modalOfficialLink');
+    const modalDownloadLink = document.getElementById('modalDownloadLink');
+    const closeBtn = document.querySelector('.close-btn');
+
+    function renderGames() {
+      const query = searchBar.value.trim().toLowerCase();
+      const visibleGames = games.filter((game) => {
+        const haystack = [
+          game.title,
+          game.short,
+          game.about,
+          ...(game.tags || [])
+        ].join(' ').toLowerCase();
+        return haystack.includes(query);
+      });
+
+      if (!visibleGames.length) {
+        gameGrid.innerHTML = '';
+        emptyState.classList.add('show');
         return;
+      }
+
+      emptyState.classList.remove('show');
+      gameGrid.innerHTML = visibleGames.map((game) => `
+        <article class="game-card" tabindex="0" data-title="${game.title}" aria-label="Open details for ${game.title}">
+          <img src="${game.image || 'logo.png'}" alt="${game.title} cover image" onerror="this.src='logo.png'">
+          <div class="game-card-body">
+            <div class="card-row">
+              <span class="tag">${game.tags[0] || 'Game'}</span>
+            </div>
+            <h3>${game.title}</h3>
+            <p>${game.short}</p>
+            <div class="card-actions">
+              <button class="mini-btn primary" type="button" data-action="details" data-title="${game.title}">About Game</button>
+              <a class="mini-btn" href="${game.officialLink || '#'}" target="_blank" rel="noopener noreferrer">Official</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
     }
 
-    let comments = JSON.parse(localStorage.getItem("comments")) || [];
+    function openGameModal(title) {
+      const game = games.find((item) => item.title === title);
+      if (!game) return;
 
-    comments.push({
-        name: name,
-        comment: comment
+      modalTitle.textContent = game.title;
+      modalImage.src = game.image || 'logo.png';
+      modalImage.alt = `${game.title} cover`;
+      modalDescription.textContent = game.short;
+      modalAbout.textContent = game.about;
+      modalOfficialLink.href = game.officialLink || '#';
+      modalDownloadLink.href = game.downloadLink || '#';
+      modalTags.innerHTML = (game.tags || []).map((tag) => `<span>${tag}</span>`).join('');
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeGameModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    searchBar.addEventListener('input', renderGames);
+
+    document.addEventListener('click', (event) => {
+      const detailButton = event.target.closest('[data-action="details"]');
+      if (detailButton) {
+        const title = detailButton.getAttribute('data-title');
+        openGameModal(title);
+        return;
+      }
+
+      const gameCard = event.target.closest('.game-card');
+      if (gameCard && !event.target.closest('a')) {
+        openGameModal(gameCard.dataset.title);
+      }
     });
 
-    localStorage.setItem("comments", JSON.stringify(comments));
-
-    document.getElementById("name").value = "";
-    document.getElementById("comment").value = "";
-
-    loadComments();
-}
-
-function loadComments() {
-    let comments = JSON.parse(localStorage.getItem("comments")) || [];
-    let container = document.getElementById("comments");
-
-    container.innerHTML = "";
-
-    comments.forEach(function(item) {
-        let div = document.createElement("div");
-        div.className = "comment";
-        div.innerHTML = "<b>" + item.name + "</b><br>" + item.comment;
-        container.appendChild(div);
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('show')) {
+        closeGameModal();
+      }
     });
-}
-</script>
+
+    closeBtn.addEventListener('click', closeGameModal);
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) closeGameModal();
+    });
+
+    renderGames();
+  </script>
 </body>
 </html>
